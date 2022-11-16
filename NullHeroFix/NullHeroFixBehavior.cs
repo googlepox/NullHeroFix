@@ -46,7 +46,7 @@ namespace NullHeroFix
             }
             if (this._isClanNull)
             {
-                InformationManager.DisplayMessage(new InformationMessage("A hero has a null clan. Setting clan..."));
+                //InformationManager.DisplayMessage(new InformationMessage("A hero has a null clan. Setting clan..."));
                 foreach (Clan clanObj in Clan.All)
                 {
                     if (clanObj.StringId == "neutral")
@@ -58,7 +58,7 @@ namespace NullHeroFix
             }
             if (this._isCultureNull)
             {
-                InformationManager.DisplayMessage(new InformationMessage("A hero has a null culture. Setting culture..."));
+                //InformationManager.DisplayMessage(new InformationMessage("A hero has a null culture. Setting culture..."));
                 foreach (Clan clanObj in Clan.All)
                 {
                     if (clanObj.Culture.StringId == "neutral_culture")
@@ -69,7 +69,7 @@ namespace NullHeroFix
             }
             if (this._isNameNull || this._isFirstNameNull)
             {
-                InformationManager.DisplayMessage(new InformationMessage("A hero has a null name. Setting name..."));
+                //InformationManager.DisplayMessage(new InformationMessage("A hero has a null name. Setting name..."));
                 hero.SetName(new TextObject("NULL_HERO_NAME"), new TextObject("NULL_HERO_FIRST_NAME"));
 
             }
