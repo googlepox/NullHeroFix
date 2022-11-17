@@ -27,23 +27,23 @@ namespace NullHeroFix
                 if (heroObj == null)
                     heroObj.Init();
 
-                if (heroObj.Clan == null && !heroObj.IsNotable)
+                if (heroObj.Clan == null && !heroObj.IsNotable && !heroObj.IsWanderer)
                 {
                     heroObj.Clan = neutralClan;
                 }
-                if (heroObj.Culture == null && !heroObj.IsNotable)
+                if (heroObj.Culture == null && !heroObj.IsNotable && !heroObj.IsWanderer)
                 {
                     heroObj.Culture = neutralCulture;
                 }
-                FixExistingNotables(heroObj);
+                FixExistingNotablesAndWanderers(heroObj);
             }
 
         }
-        private void FixExistingNotables(Hero hero)
+        private void FixExistingNotablesAndWanderers(Hero hero)
         {
             if (hero != null && hero.Clan != null)
             {
-                if (hero.IsNotable && hero.Clan.StringId == "neutral")
+                if ((hero.IsNotable || hero.IsWanderer) && hero.Clan.StringId == "neutral")
                 {
                     hero.Clan = null;
                 }
